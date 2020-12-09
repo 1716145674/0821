@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--   加载jdbc配置文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!--    配置数据库连接池-->
+    <bean class="com.alibaba.druid.pool.DruidDataSource" id="dataSource">
+        <property name="username" value="${jdbc.userName}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="url" value="${jdbc.jdbcUrl}"/>
+        <property name="driverClassName" value="${jdbc.driverClass}"/>
+        <property name="maxActive" value="${jdbc.maxActive}"/>
+        <property name="initialSize" value="${jdbc.initialSize}"/>
+    </bean>
+    <!--    spring整合mybatis的工厂-->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--        加载数据源-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--        加载mybatis的配置文件-->
+        <property name="configLocation" value="classpath:sqlMapConfig.xml"/>
+    </bean>
+    <!--            批量扫描接口生成代理对象-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--指定接口所在的包-->
+        <property name="basePackage" value="com"/>
+    </bean>
+</beans>

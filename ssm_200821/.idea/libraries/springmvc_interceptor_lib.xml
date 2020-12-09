@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="springmvc_interceptor_lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/springmvc_interceptor/web/lib/spring-aop-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_interceptor/web/lib/spring-aspects-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_interceptor/web/lib/spring-beans-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_interceptor/web/lib/spring-context-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_interceptor/web/lib/spring-core-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_interceptor/web/lib/spring-expression-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_interceptor/web/lib/spring-jcl-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_interceptor/web/lib/spring-web-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_interceptor/web/lib/spring-webmvc-5.2.5.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../feiqiu/feiq/Recv Files/01-课件/框架/spring3/最终版/Spring-day03/笔记/lib/spring-framework-5.2.5.RELEASE/libs/spring-webmvc-5.2.5.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

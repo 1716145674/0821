@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+<script>
+    window.onload = function () {
+        var data = document.getElementsByTagName("a");
+        for (var i = 0; i < data.length; i++) {
+            data[i].onclick = function () {
+                var request = new XMLHttpRequest();
+                var url = this.href;
+                var method = "GET";
+                request.open(method, url);
+                request.send(null);
+
+                request.onreadystatechange = function () {
+                    if (request.readyState == 4) {
+                        if (request.status == 200 || request.status == 304) {
+                            document.getElementById("details").innerHTML = request.responseText;
+                        }
+                    }
+                }
+                //记得关闭标签的默认行为
+                return false;
+            }
+        }
+    }
+</script>
+<body>
+<ul>
+    <li><a href="files//A.html">A</a></li>
+    <li><a href="files//B.html">B</a></li>
+    <li><a href="files//C.html">C</a></li>
+</ul>
+<div id="details"></div>
+</body>
+</html>

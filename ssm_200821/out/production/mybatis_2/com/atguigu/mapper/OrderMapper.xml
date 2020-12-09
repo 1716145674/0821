@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.mapper.OrderMapper">
+    <!--    Order queryOrderByIdForSimple(Integer id);-->
+    <resultMap id="queryOrderByIdForSimpleResultMap" type="com.atguigu.pojo.Order">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"></result>
+
+
+        <collection property="orderItemList" ofType="com.atguigu.pojo.OrderItem">
+            <id column="orderItemId" property="id"/>
+            <result  column="orderItemName" property="name"/>
+        </collection>
+    </resultMap>
+    <select id="queryOrderByIdForSimple" resultMap="queryOrderByIdForSimpleResultMap">
+        SELECT
+          order.id,
+          order.name,
+          orderItem.id orderItemId,
+          orderItem.name  orderItemName
+        FROM
+          t_order `order`
+          LEFT JOIN t_order_item orderItem
+            ON order.id = orderItem.order_id
+        WHERE order.id = #{id}
+    </select>
+<!--    Order queryOrderByIdByTwoStep(Integer id);-->
+    <resultMap id="queryOrderByIdByTwoStepResultMap" type="com.atguigu.pojo.Order">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"></result>
+        <collection property="orderItemList" column="id" select="com.atguigu.mapper.OrderItemMapper.queryOrderItemByTwoStep"/>
+    </resultMap>
+    <select id="queryOrderByIdByTwoStep" resultMap="queryOrderByIdByTwoStepResultMap">
+        SELECT
+          t_order.id,
+          t_order.name
+        FROM
+          t_order
+        WHERE t_order.id = #{id}
+    </select>
+</mapper>

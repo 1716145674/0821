@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $("p").filter(function(index) {
+                return $("ol",this).length == 0;
+            }).css("background","red");
+        });
+
+    </script>
+</head>
+<body>
+<p><ol><li>Hello</li></ol></p><p>How are you?</p>
+
+</body>
+</html>

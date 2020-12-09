@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqq.mapper.StudentMapper">
+<!--    /**-->
+<!--    * 根据班级号 查询此班级的所有的学生的list集合-->
+<!--    */-->
+<!--    List<Student> queryStudentsByClassId(Integer classId);-->
+    <select id="queryStudentsByClassId" resultType="com.zqq.pojo.Student">
+        SELECT
+          id,
+          NAME
+        FROM
+          t_student
+        WHERE clazz_id = #{classId} ;
+    </select>
+   <!-- /**
+    * 根据班级号,姓名模糊查询 查询此班级的所有的学生的list集合
+    */
+    List<Student> queryStudentsByClassIdAndLikeName( @Param("classId") Integer classId,
+    @Param("studentName") String studentName);-->
+    <select id="queryStudentsByClassIdAndLikeName" resultType="com.zqq.pojo.Student">
+        SELECT
+          id,
+          NAME
+        FROM
+          t_student
+        WHERE clazz_id = #{classId}
+            and name like concat("%",#{studentName},"%");
+    </select>
+</mapper>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+</head>
+<script>
+    window.onload = function () {
+        var data = document.getElementsByTagName("a");
+        for (var i = 0; i < data.length; i++) {
+            data[i].onclick = function () {
+                var request = new XMLHttpRequest();
+                var url = this.href;
+                var method = "GET";
+                request.open(method, url);
+                request.send(null);
+
+                request.onreadystatechange = function () {
+                    if (request.readyState == 4) {
+                        if (request.status == 200 || request.status == 304) {
+                           var node =request.responseXML;
+                           var name=node.getElementsByTagName("name")[0].firstChild.nodeValue;
+                           var webSite=node.getElementsByTagName("webSite")[0].firstChild.nodeValue;
+                           var email=node.getElementsByTagName("email")[0].firstChild.nodeValue;
+                           // alert(name);
+                           // alert(webSite);
+                           // alert(email);
+                            var aNode=document.createElement("a");
+                            aNode.href=email;
+                            aNode.appendChild(document.createTextNode(name));
+                            var hNode=document.createElement("h2");
+                            hNode.appendChild(aNode);
+                            var aNode2=document.createElement("a");
+                            aNode2.appendChild(document.createTextNode(webSite));
+                            aNode2.href=webSite;
+                            var tetails=document.getElementById("details");
+                            tetails.innerHTML="";
+                            tetails.appendChild(hNode);
+                            tetails.appendChild(aNode2);
+
+                        }
+                    }
+                }
+                //记得关闭标签的默认行为
+                return false;
+            }
+        }
+    }
+</script>
+<body>
+<ul>
+    <li><a href="files//A.xml">A</a></li>
+    <li><a href="files//B.xml">B</a></li>
+    <li><a href="files//C.xml">C</a></li>
+</ul>
+<div id="details"></div>
+</body>
+</html>

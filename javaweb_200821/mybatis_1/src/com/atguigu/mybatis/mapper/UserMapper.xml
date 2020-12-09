@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.mybatis.mapper.UserMapper">
+    <select id="queryUserById" resultType="com.atguigu.mybatis.pojo.User" >
+            select `id`,`last_name` lastName, `sex` from t_user where `id`=#{id};
+    </select>
+    <select id="queryUsers" resultType="com.atguigu.mybatis.pojo.User">
+        select `id` ,`last_name` lastName,`sex` from t_user;
+    </select>
+    <insert id="saveUser" parameterType="com.atguigu.mybatis.pojo.User">
+        insert  into t_user(`last_name`,`sex`) values (#{lastName} #{sex});
+    </insert>
+    <update id="updateUser" parameterType="com.atguigu.mybatis.pojo.User">
+        update t_user set `last_name`=#{lastName},`sex`=#{sex};
+    </update>
+    <delete id="deleteUserById" parameterType="java.lang.Integer">
+        delete from t_user where `id`=#{id}
+    </delete>
+</mapper>

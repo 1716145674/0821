@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress SpringFacetInspection -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="stu1" class="com.atguigu.pojo.Student">
+        <property name="name" value="spring_hello"/>
+        <property name="id" value="1"/>
+        <property name="aeg" value="23"/>
+    </bean>
+    <bean id="stu2" class="com.atguigu.pojo.Student">
+        <constructor-arg index="0" value="2"/>
+        <constructor-arg index="1" value="spring_hello"/>
+        <constructor-arg index="2" value="22"/>
+    </bean>
+    <context:property-placeholder location="jdbc.properties"/>
+    <alias name="stu1" alias="student"/>
+    <bean id="car" class="com.atguigu.pojo.Car">
+        <property name="carNo" value="2"/>
+        <property name="type" value="b"/>
+    </bean>
+    <bean id="car1" class="com.atguigu.pojo.Car">
+        <property name="carNo" value="1"/>
+        <property name="type" value="b"/>
+    </bean>
+    <bean class="com.atguigu.pojo.Person" id="person" autowire="constructor">
+        <property name="id" value="2"/>
+    </bean>
+</beans>

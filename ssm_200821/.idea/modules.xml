@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mybatis_01/mybatis_01.iml" filepath="$PROJECT_DIR$/mybatis_01/mybatis_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_2/mybatis_2.iml" filepath="$PROJECT_DIR$/mybatis_2/mybatis_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_3/mybatis_3.iml" filepath="$PROJECT_DIR$/mybatis_3/mybatis_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_mbg/mybatis_mbg.iml" filepath="$PROJECT_DIR$/mybatis_mbg/mybatis_mbg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_2/spring_2.iml" filepath="$PROJECT_DIR$/spring_2/spring_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_aop/spring_aop.iml" filepath="$PROJECT_DIR$/spring_aop/spring_aop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_jdbctemp/spring_jdbctemp.iml" filepath="$PROJECT_DIR$/spring_jdbctemp/spring_jdbctemp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_tx/spring_tx.iml" filepath="$PROJECT_DIR$/spring_tx/spring_tx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_1/springmvc_1.iml" filepath="$PROJECT_DIR$/springmvc_1/springmvc_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_CRUD/springmvc_CRUD.iml" filepath="$PROJECT_DIR$/springmvc_CRUD/springmvc_CRUD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_crud1/springmvc_crud1.iml" filepath="$PROJECT_DIR$/springmvc_crud1/springmvc_crud1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_interceptor/springmvc_interceptor.iml" filepath="$PROJECT_DIR$/springmvc_interceptor/springmvc_interceptor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_restful/springmvc_restful.iml" filepath="$PROJECT_DIR$/springmvc_restful/springmvc_restful.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_scope/springmvc_scope.iml" filepath="$PROJECT_DIR$/springmvc_scope/springmvc_scope.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc_updownload/springmvc_updownload.iml" filepath="$PROJECT_DIR$/springmvc_updownload/springmvc_updownload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm/ssm.iml" filepath="$PROJECT_DIR$/ssm/ssm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm_200821.iml" filepath="$PROJECT_DIR$/ssm_200821.iml" />
+    </modules>
+  </component>
+</project>

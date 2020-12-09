@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.mapper.OrderItemMapper">
+    <!--     OrderItem queryOrderItemByTwoStep(Integer id);-->
+    <select id="queryOrderItemById" resultType="com.atguigu.pojo.OrderItem">
+        select `id`,`name`
+        from t_order_item
+        where `id`=#{id}
+    </select>
+<!--        List<OrderItem> queryOrderItemByTwoStep(Integer id)-->
+    <select id="queryOrderItemByTwoStep" resultType="com.atguigu.pojo.OrderItem">
+        select `id`,`name`
+        from t_order_item
+        where `order_id`=#{orderId}
+    </select>
+</mapper>

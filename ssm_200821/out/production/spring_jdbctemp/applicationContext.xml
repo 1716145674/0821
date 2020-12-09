@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--      配置peroperties扫描器-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!--    配置数据源-->
+    <bean class="com.alibaba.druid.pool.DruidDataSource" id="dataSource">
+        <property name="username" value="${user}"/>
+        <property name="password" value="${password}"/>
+        <property name="url" value="${url}"/>
+        <property name="driverClassName" value="${driverClassName}"/>
+    </bean>
+    <!--    配置jdbctemplate-->
+    <bean class="org.springframework.jdbc.core.JdbcTemplate" id="jdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+<!--    加载具名参数的jdbctemplate -->
+    <bean class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate" id="namedParameterJdbcTemplate">
+        <constructor-arg index="0" ref="dataSource"/>
+    </bean>
+</beans>

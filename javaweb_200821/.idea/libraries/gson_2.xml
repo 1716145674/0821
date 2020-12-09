@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="gson-2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/cookie_session/web/lib/gson-2.2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/cookie_session/web/lib/junit_4.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/cookie_session/web/lib/org.hamcrest.core_1.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

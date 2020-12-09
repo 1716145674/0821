@@ -1,0 +1,11 @@
+com\atguigu\dao\TravelGroupTravelItemMapper.class
+com\atguigu\dao\SetMealMapper.class
+com\atguigu\dao\PermissionMapper.class
+com\atguigu\dao\RoleMapper.class
+com\atguigu\dao\TravelItemMapper.class
+com\atguigu\dao\SetMealTravelGroupMapper.class
+com\atguigu\dao\UserMapper.class
+com\atguigu\dao\OrderSettingMapper.class
+com\atguigu\dao\TravelGroupMapper.class
+com\atguigu\dao\MemberMapper.class
+com\atguigu\dao\OrderMapper.class

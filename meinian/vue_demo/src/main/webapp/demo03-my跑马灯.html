@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 1.导入vue.js -->
+    <script type="text/javascript" src="static/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    {{p}}
+    <input type="button" value="开始/继续" v-on:click="start()"/>
+    <input type="button" value="暂停" @click="hold()"/>
+    <input type="button" value="结束" @click="stop()"/>
+</div>
+
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            p: "轻轻地我走了，不带走一片云彩。",
+            Ptemp:"轻轻地我走了，不带走一片云彩。",
+            interval:null
+        },
+        methods: {
+            start:function(){
+                //setInterval 定时函数是放到方法体中使用的 而且其handle中无法使用this 可以使用lamda函数代替handel 就可以使用
+                // 每次执行定时器会返回一个 interval值 ，可以用来防止定时函数的重复执行 方法是监听返回值一旦改变就不让再次执行此函数
+                if (this.interval!=null){
+                    return;
+                }
+                //  this.interval = setInterval( () => {
+                //     this.p = this.p.substr(1) + this.p.substr(0, 1);
+                // },1000);
+                 this.interval = setInterval( () => {
+                    this.p = this.p.substr(1) + this.p.substr(0, 1);
+                },1000);
+            },
+            hold() {
+                clearInterval(this.interval);
+                this.interval=null;
+            },
+            stop(){
+                clearInterval(this.interval);
+                this.interval=null;
+                this.p=this.Ptemp;
+            }
+
+        }
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var liNodes = document.getElementsByTagName("li");
+            var targIndex=0;
+            for (var i = 0; i <liNodes.length ; i++) {
+                //手动为每个li节点加一个index属性
+
+                liNodes[i].index=i;
+                liNodes[i].onclick=function () {
+                    alert(this.index);
+                    if (this.index<4){
+                        targIndex=4+this.index;
+                    }else
+                        targIndex=this.index-4;
+                    var tempIndex=this.index;
+                    this.index=liNodes[targIndex].index;
+                    liNodes[targIndex].index=tempIndex;
+                    replaceEach(this,liNodes[targIndex]);
+                    alert(this.index);
+                }
+            }
+
+        }
+        //自定义两个节点互换
+        function replaceEach(aNode, bNode) {
+            //1.获取两个节点的父节点 parentNode（）
+            var aParentNode = aNode.parentNode;
+            var bParentNode = bNode.parentNode;
+            //2.复制任意一个节点
+            if (aParentNode && bParentNode) {
+                var bCloneNode = bNode.cloneNode(true);
+                //克隆onclick时间
+                bCloneNode.onclick=bNode.onclick;
+                //克隆index属性
+                bCloneNode.index=bNode.index;
+                //3.交换两个节点
+                aParentNode.replaceChild(bCloneNode, aNode);
+                bParentNode.replaceChild(aNode, bNode);
+            }
+
+        }
+    </script>
+</head>
+<body>
+<p>你喜欢哪个城市?</p>
+<ul id="city">
+    <li id="bj" name="BeiJing">北京</li>
+    <li>上海</li>
+    <li>东京</li>
+    <li>首尔</li>
+</ul>
+
+<br><br>
+<p>你喜欢哪款单机游戏?</p>
+<ul id="game">
+    <li id="rl">红警</li>
+    <li>实况</li>
+    <li>极品飞车</li>
+    <li>魔兽</li>
+</ul>
+</body>
+</html>

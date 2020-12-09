@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="user1" class="com.atguigu.pojo.User">
+        <property name="id" value="1"/>
+        <property name="password" value="11"/>
+        <property name="email" value="1111"/>
+        <property name="username">
+            <null></null>
+        </property>
+    </bean>
+    <bean class="com.atguigu.pojo.User" id="user2" p:id="1" p:email=""/>
+
+    <bean id="car" class="com.atguigu.pojo.Car">
+        <constructor-arg name="carNo" value="1"/>
+        <constructor-arg name="type" value="bba"/>
+    </bean>
+    <bean id="person" class="com.atguigu.pojo.Person">
+        <property name="id" value="1"/>
+        <property name="name" value="sss"/>
+        <property name="age" value="12"/>
+        <property name="car" ref="car"/>
+
+    </bean>
+    <bean id="person2" class="com.atguigu.pojo.Person">
+        <property name="id" value="2"/>
+        <property name="name" value="sss"/>
+        <property name="age" value="12"/>
+        <property name="car">
+            <bean class="com.atguigu.pojo.Car">
+                <constructor-arg name="carNo" value="1"/>
+                <constructor-arg name="type" value="bba"/>
+            </bean>
+        </property>
+    </bean>
+    <bean class="com.atguigu.pojo.Person" id="person3">
+        <property name="id" value="3"/>
+        <property name="name" value="sss"/>
+        <property name="age" value="12"/>
+        <property name="car">
+            <bean class="com.atguigu.pojo.Car">
+                <constructor-arg name="carNo" value="3"/>
+                <constructor-arg name="type" value="bba"/>
+            </bean>
+        </property>
+        <property name="phone" value="2222"></property>
+        <property name="list">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="1" value="1"></entry>
+                <entry key="2" value="2"></entry>
+                <entry key="3" value="3"></entry>
+            </map>
+        </property>
+        <property name="arrs">
+            <array>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </array>
+        </property>
+        <property name="pros">
+            <props>
+                <prop key="1">11</prop>
+                <prop key="2">22</prop>
+                <prop key="3">33</prop>
+            </props>
+
+        </property>
+    </bean>
+    <util:list id="list" list-class="java.util.ArrayList">
+       <value type="java.lang.Integer"> 1</value>
+    </util:list>
+    <bean id="personFactory" class="com.atguigu.pojo.PersonFactory" factory-method="create"></bean>
+</beans>

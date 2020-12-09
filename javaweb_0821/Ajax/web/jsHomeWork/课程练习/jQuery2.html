@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!-- 导入jQuery   -->
+    <script type="text/javascript" src="jquery-1.7.2.js"></script>
+    <script>
+        //$(function(){ 代码  })相当于window.onLoad
+        $(function () {
+
+            $("button").click(function () {
+                //弹出 helloworld
+                // alert("helloworld")
+
+                //jQuery和 Dom对象
+                //jquery转dom
+            //    1.获取jq对象
+            //     var $btn=$("button");
+                // 2.jq对象是一个数组对象 ，代表了所有的button对象，并为
+                //每一个button添加click事件，（隐式迭代） 是有下标可以使用的
+
+                // alert($btn.length);
+                // alert($btn[1].firstChild.nodeValue);
+                //
+               alert($(this).text());
+            })
+        })
+    </script>
+</head>
+<body>
+<button> ClickMe</button>
+<button> ClickMe2</button>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 1.导入vue.js -->
+    <script type="text/javascript" src="static/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <!--         给输入框加上验证 只能输入数字-->
+    {{message}}<br/>
+    <!--    方法想要使用事件中的相关属性必须在参数中传入$event 不加$会被认为是普通的全局属性-->
+    <input type="text" v-model="message" @keydown="check($event)">
+</div>
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            message: "",
+        },
+        methods: {
+            check(e) {
+                if ((e.keyCode >= 49 && e.keyCode < 58 && e.shiftKey != true) || (e.keyCode >= 97 && e.keyCode < 106)) {
+                } else {
+                    //阻止事件的默认属性可以让键盘不能输入
+                    e.preventDefault();
+                }
+            }
+        }
+
+
+    });
+
+
+</script>
+
+</body>
+</html>

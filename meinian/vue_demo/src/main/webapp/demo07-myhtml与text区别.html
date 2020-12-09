@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 1.导入vue.js -->
+    <script type="text/javascript" src="static/vue.min.js"></script>
+</head>
+<body>
+
+
+<div id="app">
+    <span>#####aaaa########</span>
+    <!--        v-text 与v-html都会覆盖原节点的文本节点 但是v-text
+    不会解析html字符串 而v-thml会把含有html语法的字符串解析成html语句-->
+    <span v-text="message">aaaa</span>
+    <span v-html="message">aaaa</span>
+</div>
+
+<script>
+    //2.创建一个vue对象，并指定el、data属性，
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            message: "<h1>hello vue"
+        }
+    });
+
+
+</script>
+
+</body>
+</html>

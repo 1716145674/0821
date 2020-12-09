@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   <script src="static/vue.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+       <table>
+           <tr>
+               <th>id</th>
+               <th>姓名</th>
+               <th>性别</th>
+           </tr>
+           <tr v-for="obj,index in objList ">
+               <td hidden="hidden">{{index}}</td>
+               <td>{{obj.id}}</td>
+               <td>{{obj.name}}</td>
+               <td>{{obj.age}}</td>
+           </tr>
+
+       </table>
+       <table>
+           <tr>
+               <th>id</th>
+               <th>姓名</th>
+               <th>index</th>
+           </tr>
+           <tr>
+               <td>{{obj.id}}</td>
+               <td>{{obj.name}}</td>
+               <td>{{obj.index}}</td>
+           </tr>
+
+       </table>
+       <table>
+           <tr>
+               <th>index</th>
+               <th>num</th>
+           </tr>
+           <tr v-for="val,index in list">
+               <td >{{index}}</td>
+               <td>{{val}}</td>
+
+           </tr>
+
+       </table>
+
+    </div>
+<script>
+  new Vue({
+      el:"#app",
+      data:{
+          list:[3,6,9,19],
+          objList:[
+              {id:1,name:"周福港",age:18},
+              {id:2,name:"施程浩",age:18},
+              {id:3,name:"薛玉朋",age:18}
+          ],
+          obj:{
+              id:9,
+              name:"张三"
+          }
+      }
+  });
+</script>
+</body>
+</html>

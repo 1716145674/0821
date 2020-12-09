@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/04_jQuery/04_jQuery.iml" filepath="$PROJECT_DIR$/04_jQuery/04_jQuery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05_xml/05_xml.iml" filepath="$PROJECT_DIR$/05_xml/05_xml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/book_market_1/book_market_1.iml" filepath="$PROJECT_DIR$/book_market_1/book_market_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb_0821.iml" filepath="$PROJECT_DIR$/javaweb_0821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mystore/mystore.iml" filepath="$PROJECT_DIR$/mystore/mystore.iml" />
+    </modules>
+  </component>
+</project>

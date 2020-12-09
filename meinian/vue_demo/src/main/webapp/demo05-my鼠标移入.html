@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 1.导入vue.js -->
+    <script type="text/javascript" src="static/vue.min.js"></script>
+    <style>
+        .father {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div class="father" @mouseover="father()">
+        <!--             解决事件的冒泡问题在对应的事件声明后加上.stop-->
+        <!--        不使用方法直接执行 是在字符串中直接写入想要执行的语句-->
+        <div class="son" @mouseover.stop="alert('son')"></div>
+    </div>
+</div>
+<script>
+    //2.创建一个vue对象，并指定el、data属性，
+    var vm = new Vue({
+        el: "#app",
+        methods: {
+            father: function () {
+                alert('father...')
+            }
+        }
+    });
+
+
+</script>
+
+</body>
+</html>

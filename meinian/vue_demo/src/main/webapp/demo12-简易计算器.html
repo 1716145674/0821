@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   <script src="static/vue.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        num1:<input type="text" v-model="n1">
+        <select v-model="sel">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        num2:<input type="text" v-model="n2">
+        <input type="button" value="="  @click="caculate()">
+        result:<input type="text" v-model="result">
+    </div>
+<script>
+  new Vue({
+      el:"#app",
+      data:{
+          n1:"",
+          n2:"",
+          sel:"+",
+          result:""
+      },
+      methods:{
+          caculate:function () {
+             // eval()方法可以将参数中字符串自动进行解析成表打式
+             this.result= eval(this.n1+this.sel+this.n2);
+              // switch (this.sel) {
+              //     case "+":
+              //        this.result = parseInt(this.n1)+parseInt(this.n2);
+              //        break;
+              //     case "-":
+              //         this.result = parseInt(this.n1)-parseInt(this.n2);
+              //         break;
+              //     case "*":
+              //         this.result = parseInt(this.n1)*parseInt(this.n2);
+              //         break;
+              //     case "/":
+              //         this.result = parseInt(this.n1)/parseInt(this.n2);
+              //         break;
+              // }
+          }
+      }
+  });
+</script>
+</body>
+</html>

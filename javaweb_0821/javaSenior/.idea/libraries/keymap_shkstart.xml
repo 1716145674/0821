@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="keymap-shkstart">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/keymap-shkstart.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="jar://$PROJECT_DIR$/lib/keymap-shkstart.jar!/" recursive="false" />
+  </library>
+</component>

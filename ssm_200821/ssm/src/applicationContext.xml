@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mybais="http://mybatis.org/schema/mybatis-spring"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--     开启包扫描 忽略子容器中的controller注解注释的对象-->
+    <context:component-scan base-package="com">
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:exclude-filter type="annotation"
+                                expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+    </context:component-scan>
+    <!--    加载jdbc.properties配置文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!--    配置数据库连接池-->
+    <bean class="com.alibaba.druid.pool.DruidDataSource" id="dataSource">
+        <property name="username" value="${user}"/>
+        <property name="password" value="${password}"/>
+        <property name="url" value="${url}"/>
+        <property name="driverClassName" value="${driverClassName}"/>
+        <property name="initialSize" value="${initialSize}"/>
+        <property name="maxActive" value="${maxActive}"/>
+    </bean>
+    <!--    配置sqlSessionFactoryBean 将sqlSessionFactory放入到spring容器中-->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+        <!--        加载数据库连接池-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--加载mybatis的配置文件-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <!--        加载mapper接口的实现的xml文件-->
+        <property name="mapperLocations" value="classpath:com/atguigu/mapper/*.xml"/>
+    </bean>
+    <!--    配置mppper接口的掃描器-->
+    <mybais:scan base-package="com.atguigu.mapper"/>
+    <!--   开启spring事务 AOP代理 + 切面 -->
+    <!--    配置切面 dataSourceTransactionManager 如果id为transactionManager的话，事务属性的这个属性可以省略-->
+    <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="transactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!--    配置事务advice-->
+    <tx:advice id="tx_advice" transaction-manager="transactionManager">
+        <!--       配置事务属性 给匹配的方法添加传播性的属性-->
+        <tx:attributes>
+            <tx:method name="insert*" propagation="REQUIRED"/>
+            <tx:method name="delete*" propagation="REQUIRED"/>
+            <tx:method name="update*" propagation="REQUIRED"/>
+            <tx:method name="save*" propagation="REQUIRED"/>
+            <!--           read-only表示不开启事务 只可以读取 -->
+            <tx:method name="*" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+    <!--    配置AOP代理 切入点表达式-->
+   <aop:config>
+       <aop:advisor advice-ref="tx_advice" pointcut="execution(public * com.atguigu..*service*.*(..))"/>
+   </aop:config>
+
+</beans>

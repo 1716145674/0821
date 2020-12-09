@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mybais="http://mybatis.org/schema/mybatis-spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+    <!--开启包扫描-->
+    <context:component-scan base-package="com"></context:component-scan>
+    <!--    加载jdbc.properties配置文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <!--    配置数据库连接池-->
+    <bean class="com.alibaba.druid.pool.DruidDataSource" id="dataSource">
+        <property name="username" value="${user}"/>
+        <property name="password" value="${password}"/>
+        <property name="url" value="${url}"/>
+        <property name="driverClassName" value="${driverClassName}"/>
+        <property name="initialSize" value="${initialSize}"/>
+        <property name="maxActive" value="${maxActive}"/>
+    </bean>
+    <!--    配置sqlSessionFactoryBean 将sqlSessionFactory放入到spring容器中-->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+        <!--        加载数据库连接池-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--加载mybatis的配置文件-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <!--        加载mapper接口的实现的xml文件-->
+        <property name="mapperLocations" value="classpath:com/atguigu/mapper/*.xml"/>
+    </bean>
+    <!--    配置mppper接口的掃描器-->
+    <mybais:scan base-package="com.atguigu.mapper"/>
+</beans>

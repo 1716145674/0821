@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="static/jquery-1.12.4.min.js"></script>
+    <style type="text/css">
+        div {
+            width: 300px;
+            height: 300px;
+            background: pink;
+            display: none;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .current {
+            background: pink;
+        }
+    </style>
+</head>
+<body >
+    <input type="button" value="按钮一" />
+    <input type="button" value="按钮二" class="current" />
+    <input type="button" value="按钮三" />
+    <div >000000</div>
+    <div class="block">111111</div>
+    <div>222222</div>
+
+ <script>
+    $("input[type='button']").click(function () {
+        $(this).addClass("current").siblings().removeClass("current");
+        $("div").eq($("input[type='button']").index(this)).addClass("block").siblings().removeClass("block");
+    });
+ </script>
+
+</body>
+</html>

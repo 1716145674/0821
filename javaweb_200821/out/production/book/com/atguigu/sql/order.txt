@@ -1,0 +1,22 @@
+USE book ;
+
+DROP TABLE IF EXISTS t_order ;
+
+CREATE TABLE t_order (
+  `order_id` VARCHAR(64) PRIMARY KEY,
+  `create_time` DATETIME NOT NULL,
+  `price` DECIMAL (10, 2) NOT NULL,
+  `status` INT,
+  `user_id` INT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES t_user (id)
+) ;
+
+CREATE TABLE t_order_item (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR (100),
+  `count` INT,
+  `price` DECIMAL (11, 2),
+  `total_price` DECIMAL (11, 2),
+  `order_id` VARCHAR (64),
+  FOREIGN KEY (order_id) REFERENCES t_order (order_id)
+) ;

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/book/book.iml" filepath="$PROJECT_DIR$/book/book.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cookie_session/cookie_session.iml" filepath="$PROJECT_DIR$/cookie_session/cookie_session.iml" />
+      <module fileurl="file://$PROJECT_DIR$/design_model/design_model.iml" filepath="$PROJECT_DIR$/design_model/design_model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaweb_200821.iml" filepath="$PROJECT_DIR$/javaweb_200821.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_1/mybatis_1.iml" filepath="$PROJECT_DIR$/mybatis_1/mybatis_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_hello/spring_hello.iml" filepath="$PROJECT_DIR$/spring_hello/spring_hello.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //测试replaceChild 方法
+        window.onload = function () {
+            var bjNode = document.getElementById("bj");
+            var hjNode = document.getElementById("rl");
+
+            /*var cityNode = document.getElementById("city");
+            var gameNode = document.getElementById("game")
+
+            cityNode.replaceChild(hjNode,bjNode);
+            实现两个节点的互换
+            克隆bjNode
+            cloneNode（deep） 若deep 为true ，则可以克隆子节点
+             var bjCloneNode = bjNode.cloneNode(true);
+            gameNode.replaceChild(bjCloneNode,hjNode);
+            cityNode.replaceChild(hjNode,bjNode);*/
+
+            replaceEach(bjNode, hjNode);
+
+        }
+
+        //自定义两个节点互换
+        function replaceEach(aNode, bNode) {
+            //1.获取两个节点的父节点 parentNode（）
+            var aParentNode = aNode.parentNode;
+            var bParentNode = bNode.parentNode;
+            //2.复制任意一个节点
+            if (aParentNode && bParentNode) {
+                var bCloneNode = bNode.cloneNode(true);
+
+                //3.交换两个节点
+                aParentNode.replaceChild(bCloneNode, aNode);
+                bParentNode.replaceChild(aNode, bNode);
+            }
+
+        }
+    </script>
+</head>
+<body>
+<p>你喜欢哪个城市?</p>
+<ul id="city">
+    <li id="bj" name="BeiJing">北京</li>
+    <li>上海</li>
+    <li>东京</li>
+    <li>首尔</li>
+</ul>
+
+<br><br>
+<p>你喜欢哪款单机游戏?</p>
+<ul id="game">
+    <li id="rl">红警</li>
+    <li>实况</li>
+    <li>极品飞车</li>
+    <li>魔兽</li>
+</ul>
+
+<br><br>
+gender:
+<input type="radio" name="gender" value="male"/> Male
+<input type="radio" name="gender" value="female"/> Female
+<br><br>
+name: <input type="text" name="username" value="atgugu"/>
+</body>
+</html>

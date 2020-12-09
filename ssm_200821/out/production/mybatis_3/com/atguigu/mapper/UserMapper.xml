@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.mapper.UserMapper">
+    <sql id="t_user_properties_sql">
+        `id`,`last_name` lastName ,`sex`
+    </sql>
+    <!-- /**
+     * 根据传入的id的list集合查找用户
+     */
+     User queryUserByIds(List<Integer> ids);-->
+    <select id="queryUserByIds" resultType="com.atguigu.pojo.User">
+        select
+        <include refid="t_user_properties_sql"/>
+        from
+        t_user
+        <where>
+            <foreach open="id in (" collection="ids" item="id" separator="," close=")">
+                #{id}
+            </foreach>
+        </where>
+    </select>
+    <select id="queryUserByIds" resultType="com.atguigu.pojo.User">
+       
+        insert  into a
+        values 
+        <foreach collection="list" item="user" separator="," >
+            (#{user.id},#{})
+
+        </foreach>
+    </select>
+
+    <!-- /**
+     * 批量插入多个user
+     */
+     Integer insertManyUser(@Param("uses") List<User> users);-->
+    <insert id="insertManyUser" parameterType="com.atguigu.pojo.User">
+        insert into t_user(`last_name`,`sex`)
+        values
+        <foreach collection="users" item="user" separator=",">
+            (#{user.lastName},#{user.sex})
+        </foreach>
+    </insert>
+    <!--/*
+    根据id查找用户对象
+    */
+    User queryUserById(Integer id);-->
+    <select id="queryUserById" resultType="com.atguigu.pojo.User">
+        select
+            <include refid="t_user_properties_sql"/>
+        from
+            t_user
+        where
+            id=#{id}
+    </select>
+</mapper>

@@ -1,0 +1,16 @@
+package com.atguigu.jdbc.test;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class Test_batch {
+    public static void main(String[] args) throws SQLException {
+        Connection connection= DriverManager.getConnection("");
+        PreparedStatement pst = connection.prepareStatement("");
+        pst.addBatch();
+        pst.executeBatch();
+
+    }
+}

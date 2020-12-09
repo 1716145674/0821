@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Untitled Document</title>
+		<script type="text/javascript" src="jquery-1.7.2.js"></script>
+		<script type="text/javascript">
+			$(function () {
+				//在jq中存在隐式迭代的机制，
+				// alert($("p").length);$("p").click(function () {表示为所有的
+				//p节点添加点击事件返回值是一个dom数组，而且响应函数中的this是一个dom对象
+				//要想使用jq方法可$(this)这样的方法
+				//text（）无参表示显示文本节点的值，有参数表示修改其中的值 类似的有attr（） val（）
+				$("p").click(function () {
+						alert($(this).text());
+						$(this).text("^^"+$(this).text());
+					// alert(this.firstChild.nodeValue);
+				})
+				$("table:first tr:even").css("background","#ffbbaa");
+				$("button").click(function () {
+
+					alert($(":checkbox[name='test']:checked").length);
+				})
+			})
+		</script>
+
+	</head>
+	<body>
+		<p>段落1</p>
+		<p>段落2</p>
+		<p>段落3</p>
+		
+		<table>
+			<tr>
+				<td>第一行</td><td>第一行</td>
+			</tr>
+			<tr>
+				<td>第一行</td><td>第一行</td>
+			</tr>
+			<tr>
+				<td>第一行</td><td>第一行</td>
+			</tr>
+			<tr>
+				<td>第一行</td><td>第一行</td>
+			</tr>
+			<tr>
+				<td>第一行</td><td>第一行</td>
+			</tr>
+			<tr>
+				<td>第一行</td><td>第一行</td>
+			</tr>
+		</table>
+		<br>
+		<hr>
+		<br>
+		<table>
+			<tr>
+				<td>第一行</td><td>第一行</td>
+			</tr>
+			<tr>
+				<td>第一行</td><td>第一行</td>
+			</tr>
+			<tr>
+				<td>第一行</td><td>第一行</td>
+			</tr>
+			<tr>
+				<td>第一行</td><td>第一行</td>
+			</tr>
+			<tr>
+				<td>第一行</td><td>第一行</td>
+			</tr>
+			<tr>
+				<td>第一行</td><td>第一行</td>
+			</tr>
+		</table>
+		
+		<input type="checkbox" name="test" />
+		<input type="checkbox" name="test" />
+		<input type="checkbox" name="test" />
+		<input type="checkbox" name="test" />
+		<input type="checkbox" name="test" />
+		<input type="checkbox" name="test" />
+		<button>您选中的个数</button>
+	</body>
+</html>

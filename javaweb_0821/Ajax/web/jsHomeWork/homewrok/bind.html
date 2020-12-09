@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Untitled Document</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+           /* $(".head").click(function () {
+                //使用is()函数来判定jq对象是否符合选择器 返回值是boolean
+                var isSee = $(".content").is(":hidden");
+                if (isSee) {
+                    //show（） hide（）
+                    $(".content").show();
+                } else {
+                    $(".content").hide();
+
+                }
+
+            })*/
+           /* $(".head").bind("click", function () {
+                //使用is()函数来判定jq对象是否符合选择器 返回值是boolean
+                var isSee = $(".content").is(":hidden");
+                if (isSee) {
+                    //show（） hide（）
+                    $(".content").show();
+                } else {
+                    $(".content").hide();
+
+                }
+            })*/
+           /* $(".head").mouseover(function () {
+                $(".content").show();
+            }).mouseout(function () {
+                $(".content").hide();
+            })*/
+            //合成事件： hover（） 鼠标移动上去执行第一个事件，鼠标移出去执行第二个事件
+           /*  $(".head").hover(function () {
+                 $(".content").show();
+             },function () {
+                 $(".content").hide();
+             })*/
+            //合成事件 toggle（） 第一次点击执行第一个函数，第二次点击执行第二个函数循环往复
+           /* $(".head").toggle(function () {
+                $(".content").show();
+            },function () {
+                $(".content").hide();
+            },function () {
+                $(this).remove();
+            })*/
+           /* $(".head").toggle(function () {
+                $(".content").show(500);
+            },function () {
+                $(".content").hide(500);
+            },function () {
+                $(this).remove();
+            })*/
+           /* $(".head").toggle(function () {
+                $(".content").fadeIn(600);
+            },function () {
+                $(".content").fadeOut(600);
+            });*/
+            $(".head").click(function () {
+                // $(".content").toggle(600);
+                // $(".content").slideToggle(600);
+                $(".content").fadeToggle(600);
+            });
+/*
+            $(".head").toggle(function () {
+                $(".content").slideDown(600);
+            },function () {
+                $(".content").slideUp(600);
+            });
+*/
+
+        })
+    </script>
+
+
+</head>
+<body>
+<div id="panel">
+    <h5 class="head">什么是jQuery?</h5>
+    <div class="content">
+        jQuery是继Prototype之后又一个优秀的JavaScript库，它是一个由 John Resig
+        创建于2006年1月的开源项目。jQuery凭借简洁的语法和跨平台的兼容性，极大地简化了JavaScript开发人员遍历HTML文档、操作DOM、处理事件、执行动画和开发Ajax。它独特而又优雅的代码风格改变了JavaScript程序员的设计思路和编写程序的方式。
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--
+        配置环境 就是连接数据库的信息
+    -->
+    <environments default="development">
+        <environment id="development">
+
+            <transactionManager type="JDBC"></transactionManager>
+            <!--表示使用数据库连接池-->
+            <dataSource type="POOLED">
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--
+       Mybatis是将sql语句放到配置文件中，而不是放到java勒种
+    -->
+    <mappers>
+        <mapper resource="com\atguigu\mybatis\mapper\UserMapper.xml"></mapper>
+    </mappers>
+    <!--    <properties resource="jdbc.properties">-->
+
+    <!--    </properties>-->
+    <typeAliases>
+        <!-- 单个起别名-->
+        <typeAlias type="com.atguigu.mybatis.pojo.User" alias="User"></typeAlias>
+        <package name="com.atguigu.pojo"/>
+
+    </typeAliases>
+</configuration>

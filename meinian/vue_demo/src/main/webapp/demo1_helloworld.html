@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="static/vue.min.js"></script>
+</head>
+<body>
+<div id="vue_demo1">
+    <!--        插值表达式-->
+    {{message==""?"空":"非空"}} <br>
+
+    <!--    双向数据绑定命令 v-model=model数据名-->
+    <input type="text" value="" v-model="message">
+
+</div>
+<script type="text/javascript">
+
+    var vue = new Vue({
+        el: "#vue_demo1",
+        data: {
+            message: "zqq"
+        }
+    });
+</script>
+</body>
+</html>

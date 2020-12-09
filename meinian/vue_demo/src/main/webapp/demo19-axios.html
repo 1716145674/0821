@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="static/vue.min.js"></script>
+    <script type="text/javascript" src="static/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-for="obj in list">
+            {{obj.username}}---> {{obj.age}}
+        </div>
+    </div>
+
+  <script>
+     var vm= new Vue({
+          el:"#app",
+          data:{
+              list:[]
+          },
+         created:function () {
+               axios.post('./data/user.json').then((resp) => {
+                   this.list=resp.data;
+               }).catch((resp) => {
+
+               })
+         }
+
+      });
+
+  </script>
+</body>
+</html>

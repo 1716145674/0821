@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<books>
+    <book sn="sn03231133">
+        <name>金瓶梅</name>
+        <author>未知</author>
+        <price>未知</price>
+    </book>
+    <book sn="sn03231134">
+        <name>玉蒲团</name>
+        <author>未知</author>
+        <price>未知</price>
+    </book>
+    <book sn="sn03231135">
+        <name>灯草和尚</name>
+        <author>未知</author>
+        <price>未知</price>
+    </book>
+    <book sn="sn03231136">
+        <name>西厢记</name>
+        <author>未知</author>
+        <price>未知</price>
+    </book>
+</books>

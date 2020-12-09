@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+        <servlet-name>dispacher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--        配置springMVC的容器 有两种方式 这是第一种 还可以死在web-inf下配置 servletname-servlet.xml而且这种方式是默认方式-->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:springmvc.xml</param-value>
+        </init-param>
+        <!--让此servlet在web工程启动的时候就会自动加载，提升了用户第一次访问此servlet的速度-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispacher</servlet-name>
+        <!--
+         <url-pattern>/</url-pattern> 表示会拦截客户端发送过来的所有请求
+      -->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+</web-app>

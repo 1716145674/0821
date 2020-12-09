@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zqq.mapper.ClassMapper">
+    <!-- /**
+     * 根据班级id 查找此班级及其班级中的所有的学生
+     */
+     Class queryClassAndStudentsByClassId(Integer classId);-->
+    <select id="queryClassAndStudentsByClassId" resultMap="queryClassAndStudentsByClassIdResultMap">
+    /* 编写sql语句*/
+        SELECT
+          t_clazz.`id`,
+          t_clazz.`name`,
+          t_student.`id` stuId,
+          t_student.`name` stuName
+        FROM
+          t_clazz
+          LEFT JOIN t_student
+            ON t_clazz.`id` = t_student.`clazz_id`
+        WHERE t_clazz.`id` = #{classId};
+    </select>
+    <resultMap id="queryClassAndStudentsByClassIdResultMap" type="com.zqq.pojo.Class">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <!--      使用collection进行集合映射-->
+        <collection property="studentList" ofType="com.zqq.pojo.Student" >
+            <id column="stuId" property="id"/>
+            <result column="stuName" property="name"/>
+        </collection>
+    </resultMap>
+   <!-- /**
+    *  根据班级id 分步查询 并使用懒加载机制延迟加载
+    */
+    Class queryClassAndStudentsByClassIdWithTwoStep(Integer classId);-->
+    <select id="queryClassAndStudentsByClassIdWithTwoStep" resultMap="queryClassAndStudentsByClassIdWithTwoStepResultMap">
+        SELECT
+          `id`,
+          `name`
+        FROM
+          t_clazz
+        WHERE `id` = #{classId}
+    </select>
+    <resultMap id="queryClassAndStudentsByClassIdWithTwoStepResultMap" type="com.zqq.pojo.Class">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <collection property="studentList" select="com.zqq.mapper.StudentMapper.queryStudentsByClassId"
+                    column="id"/>
+    </resultMap>
+    <!--/**
+    *  根据班级id 分步查询 并使用懒加载机制延迟加载
+    */
+    Class queryClassAndStudentsByClassIdAndLikeNameWithTwoStep(Integer classId);-->
+    <select id="queryClassAndStudentsByClassIdAndLikeNameWithTwoStep" resultMap="queryClassAndStudentsByClassIdAndLikeNameWithTwoStepResultMap">
+        SELECT
+          `id`,
+          `name`
+        FROM
+          t_clazz
+        WHERE `id` = #{classId}
+    </select>
+    <resultMap id="queryClassAndStudentsByClassIdAndLikeNameWithTwoStepResultMap" type="com.zqq.pojo.Class">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <collection property="studentList" select="com.zqq.mapper.StudentMapper.queryStudentsByClassIdAndLikeName"
+                    column="{classId=id,studentName=name}"/>
+    </resultMap>
+</mapper>

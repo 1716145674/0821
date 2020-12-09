@@ -1,0 +1,27 @@
+<component name="libraryTable">
+  <library name="springmvc_crud_lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/druid-1.1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/junit_4.12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/mysql-connector-java-5.1.37-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/org.hamcrest.core_1.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/spring-aop-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/spring-aspects-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/spring-beans-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/spring-context-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/spring-core-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/spring-expression-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/spring-jcl-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/spring-jdbc-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/spring-orm-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/spring-test-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/spring-tx-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/spring-web-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/spring-webmvc-5.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/taglibs-standard-impl-1.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc_CRUD/web/WEB-INF/lib/taglibs-standard-spec-1.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

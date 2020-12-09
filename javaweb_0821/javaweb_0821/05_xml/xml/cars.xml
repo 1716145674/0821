@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<cars>
+    <car>
+        <grand>奥迪</grand>
+        <price>50万</price>
+        <type>BBA</type>
+        <peizhi>
+            <dangwei>自动挡</dangwei>
+            <seat>真皮沙发</seat>
+            <safe>
+                <shezhe>ADs</shezhe>
+                <qinang>9个</qinang>
+            </safe>
+        </peizhi>
+    </car>
+    <car>
+        <grand>劳斯莱斯</grand>
+        <price>5000万</price>
+        <type>起飞</type>
+        <peizhi>
+            <dangwei>无人驾驶</dangwei>
+            <seat>恐龙皮沙发</seat>
+            <zhangbi>定制雨伞</zhangbi>
+            <safe>
+                <shezhe>航空合金制动器</shezhe>
+                <qinang>100个</qinang>
+            </safe>
+        </peizhi>
+    </car>
+    <bus>
+        <grand>五菱</grand>
+        <price>1000万</price>
+        <type>公交车</type>
+    </bus>
+</cars>

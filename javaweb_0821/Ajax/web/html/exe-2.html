@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var tableNode = document.getElementById("employeetable");
+            var aNodes = tableNode.getElementsByTagName("a");
+
+            for (var i = 0; i < aNodes.length; i++) {
+                aNodes[i].onclick = function () {
+                    var trNode = this.parentNode.parentNode;
+                    var textContent = trNode.getElementsByTagName("td")[0]
+                        .firstChild.nodeValue;
+                    textContent = trim(textContent);
+                    // content.trim(content);
+                    alert("a")
+                    var b = confirm("删除?");
+                    if (b) {
+                        trNode.parentNode.removeChild(trNode);
+                    }
+                    return false;
+                }
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+<center>
+    <br> <br> 添加新员工 <br> <br> name: <input type="text" name="name" id="name"/>&nbsp;&nbsp;
+    email: <input type="text" name="email" id="email"/>&nbsp;&nbsp;
+    salary: <input type="text"
+                   name="salary" id="salary"/> <br> <br>
+    <button id="addEmpButton" value="abc">Submit</button>
+    <br> <br>
+    <hr>
+    <br> <br>
+    <table id="employeetable" border="1" cellpadding="5" cellspacing=0>
+        <tbody>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>&nbsp;</th>
+        </tr>
+        <tr>
+            <td>Tom</td>
+            <td>tom@tom.com</td>
+            <td>5000</td>
+            <td><a href="deleteEmp?id=001">Delete</a></td>
+        </tr>
+        <tr>
+            <td>
+                Jerry
+            </td>
+            <td>jerry@sohu.com</td>
+            <td>8000</td>
+            <td><a href="deleteEmp?id=002">Delete</a></td>
+        </tr>
+        <tr>
+            <td>Bob</td>
+            <td>bob@tom.com</td>
+            <td>10000</td>
+            <td><a href="deleteEmp?id=003">Delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+</center>
+</body>
+</html>

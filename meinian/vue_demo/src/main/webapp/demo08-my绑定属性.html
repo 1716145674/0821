@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 1.导入vue.js -->
+    <script type="text/javascript" src="static/vue.min.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+        .big {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<!--
+   v-on:事件=函数  等同于 @事件=函数
+   v-bind:属性=    等同于:
+-->
+<div id="app">
+    <div>hello vue</div>
+    <div class="red big">hello vue</div>
+    <div :class="{red:isRed,big:isBig}">hello vue</div>
+    <div :class="[aaa,'big']">hello vue</div>
+    <!--        添加了bind绑定属性的命令后 原先可以使用字符串的地方就不能使用了， 必须使用变量来代替-->
+    <a :href="dss">走起</a>
+
+</div>
+
+<script>
+    //2.创建一个vue对象，并指定el、data属性，
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            isRed: true,
+            isBig: false,
+            aaa: 'red',
+            dss: 'http://www.atguigu.com'
+        }
+    });
+
+
+</script>
+
+</body>
+</html>

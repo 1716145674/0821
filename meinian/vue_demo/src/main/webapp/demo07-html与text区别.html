@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 1.导入vue.js -->
+    <script type="text/javascript" src="static/vue.min.js"></script>
+</head>
+<body >
+
+
+
+    <div id="app">
+        <p>============{{message}}===========</p>
+        <p v-text="message">*************</p>
+        <p v-html="message">*************</p>
+    </div>
+
+ <script>
+     //2.创建一个vue对象，并指定el、data属性，
+    var vm= new Vue({
+        el:"#app",
+        data:{
+            message:"<h1>hello vue</h1>"
+        }
+     });
+
+
+ </script>
+
+</body>
+</html>

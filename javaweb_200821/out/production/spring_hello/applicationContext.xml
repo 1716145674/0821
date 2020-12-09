@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+<!--<bean id="person" class="com.atguigu.spring.pojo.Person">-->
+<!--    <property name="id" value="1"></property>-->
+<!--    <property name="name" value="tom"></property>-->
+<!--    <property name="age" value="18"></property>-->
+<!--    <property name="gender" value="男"></property>-->
+<!--</bean>-->
+    <bean class="com.atguigu.spring.pojo.Person" id="person" p:id="11">
+        <property name="list">
+            <list>
+                <value> </value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="" value=""></entry>
+                <entry key="" value=""></entry>
+                <entry key="" value=""></entry>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="username"> root</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

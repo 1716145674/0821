@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="static/vue.min.js"></script>
+
+</head>
+
+<body>
+<div id="app">
+    {{city}} <br/>
+    <!--    //绑定下拉框时如果是单项选择 Vue中的数据使用"" ,如果是多项用数组[]-->
+    <select v-model="city" multiple="multiple">
+        <option value="北京">北京</option>
+        <option value="上海">上海</option>
+        <option value="深圳"> 深圳</option>
+    </select>
+    <br>
+    {{hobby}}<br>
+    <!--    绑定的是多选框时必须用数组 v-model可以提到name的功能-->
+    <input type="checkbox" v-model="hobby" value="lol">
+    <input type="checkbox" v-model="hobby" value="cf">cf
+    <input type="checkbox" v-model="hobby" value="feiche">car
+    <input type="checkbox" v-model="hobby" value="wendao">dao
+</div>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            city: ["北京", "上海"],
+            hobby: [],
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xml="http://www.w3.org/XML/1998/namespace"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd ">
+    <!-- 标签的版本 -->
+    <tlib-version>1.0</tlib-version>
+    <!-- 标签的前缀 -->
+    <short-name>atguigu</short-name>
+    <!-- 标签的uri -->
+    <uri>http://www.atguigu.com/foreach/core</uri>
+    <tag>
+        <name>foreach</name>
+        <tag-class>com.atguigu.tag.ForEach</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>items</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>var</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>foreachMap</name>
+        <tag-class>com.atguigu.tag.ForEachMap</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>items</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>var</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>foreachAll</name>
+        <tag-class>com.atguigu.tag.ForEachAll</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>items</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>var</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+</taglib>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns: xmlns:>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="static/vue.min.js"></script>
+</head>
+<body>
+<div id="vue_demo1">
+    <!--        插值表达式-->
+    {{message}}
+    <br>
+    <!--    双向数据绑定命令 v-model=model数据名-->
+    <input type="text" value="" v-model="message">
+    <br>
+    <button id="click_btn" v-on:click="update('saligesa')">点我点我</button>
+    <br>
+    <button id="click_btn2" @click="update('bidd')">点我吧</button>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>gender</th>
+        </tr>
+        <tr v-for="val,index in person">
+            <td>{{val.id}}</td>
+            <td>{{index}}</td>
+            <td>{{val.name}}</td>
+            <td>{{val.gender}}</td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+
+    var vue = new Vue({
+        el: "#vue_demo1",
+        data: {
+            message: "zqq",
+            person:[
+                {id:1,name:"zhangsan",gender:"man"},
+                {id:2,name:"lisi",gender:"feman"},
+            ]
+
+        },
+        methods: {
+            change: function (data) {
+                vue.message = data;
+            },
+            update(data) {
+                this.message = data;
+            }
+        }
+    });
+</script>
+</body>
+</html>

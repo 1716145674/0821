@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   <script src="static/vue.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <p v-for="(data,index) in list">{{index}}---->{{data}}</p>
+        <div v-for="obj,index in objList">{{index}}---->{{obj.id}}---->{{obj.name}}---->{{obj.age}}</div>
+        <div v-for="val,key,index in obj">{{index}}--->{{key}}---->{{val}}</div>
+        <div v-for="a in 10">{{a}}</div>
+    </div>
+<script>
+  new Vue({
+      el:"#app",
+      data:{
+          list:[3,6,9,19],
+          objList:[
+              {id:1,name:"周福港",age:18},
+              {id:2,name:"施程浩",age:18},
+              {id:3,name:"薛玉朋",age:18}
+          ],
+          obj:{
+              id:9,
+              name:"张三"
+          }
+      }
+  });
+</script>
+</body>
+</html>
